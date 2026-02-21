@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="/src/style.css" rel="stylesheet" />
+        <link rel="preconnect" href="https://rsms.me/" />
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+            rel="stylesheet"
+        />
+        <title>dont-queue-extremes</title>
+    </head>
+    <body
+        class="bg-light-bg selection:bg-cyan-100 dark:bg-dark-bg dark:selection:bg-cyan-850 transition duration-100 ease-in"
+    >
+        <header>
+            <div class="w-full mb-2 px-4 items-end flex flex-col">
+                <button
+                    class="underline cursor-pointer p-2 text-light-tx hover:bg-light-ui dark:text-dark-tx dark:hover:bg-dark-ui"
+                    data-theme-toggle
+                >
+                    Add invert mode
+                </button>
+                <button
+                    class="underline cursor-pointer p-2 text-light-tx hover:bg-light-ui dark:text-dark-tx dark:hover:bg-dark-ui"
+                    data-font-toggle
+                >
+                    Change font to Lexend
+                </button>
+            </div>
+            <h1
+                class="p-5 flex-wrap bg-light-bg-2 dark:bg-dark-bg-2 text-5xl text-light-tx flex items-center justify-center text-center gap-4 leading-relaxed dark:text-dark-tx"
+            >
+                <img src="/FFXIV_Ultimate_Raid.png" class="w-12 h-12" /> Don't
+                queue Extreme and Savage duties in Duty Finder
+                <img src="/FFXIV_Ultimate_Raid.png" class="w-12 h-12" />
+            </h1>
+        </header>
+        <main
+            class="p-5 mt-5 mb-5 mx-auto max-w-3xl bg-light-bg-2 rounded-sm dark:bg-dark-bg-2"
+        >
+            <div id="top-bit">
+                <p class="text-light-bl underline pb-4 dark:text-dark-bl">
+                    This information is presented with good intentions
+                </p>
+                <p class="pb-4 text-light-tx dark:text-dark-tx">
+                    The information below is presented as a gathering of
+                    information designed to help new players who may not know
+                    those
+                    <span class="text-light-pu font-bold dark:text-dark-pu"
+                        >Savage</span
+                    >
+                    raids and
+                    <span class="text-light-pu font-bold dark:text-dark-pu"
+                        >Extreme</span
+                    >
+                    trials or just have heard of them recently.
+                </p>
+                <p class="pb-4 text-light-tx dark:text-dark-tx">
+                    FFXIV currently does not a good job showcasing or explaining
+                    this, and that make it's kinda hard for newbies to figure
+                    out why they shouldn't queue those high-end fights directly
+                    in normal circumstances.
+                </p>
+                <p class="pb-4 text-light-tx dark:text-dark-tx">
+                    Hopefully in the near future Square Enix will address this
+                    and approach this situation "gracefully". Until then...
+                </p>
+            </div>
+            <section
+                id="tldr"
+                class="mb-4 p-4 bg-light-ui rounded-xs border-light-ui-3 border-2 dark:bg-dark-ui dark:border-dark-ui-3"
+            >
+                <h1
+                    class="font-bold text-3xl pb-4 text-light-tx dark:text-dark-tx"
+                >
+                    TL;DR
+                </h1>
+                <p class="text-base pb-4 text-light-tx dark:text-dark-tx">
+                    Once you unlock
+                    <span class="text-light-pu font-bold dark:text-dark-pu"
+                        >Extreme</span
+                    >
+                    trials or
+                    <span class="text-light-pu font-bold dark:text-dark-pu"
+                        >Savage</span
+                    >
+                    raids, don't queue them directly.
+                </p>
+                <p class="text-base pb-4 text-light-tx dark:text-dark-tx">
+                    They are designed as significantly more powerful boss fights
+                    than Normal.
+                </p>
+                <p class="text-base text-light-tx dark:text-dark-tx">
+                    Use
+                    <span class="text-light-gr font-bold dark:text-dark-gr"
+                        >Party Finder</span
+                    >
+                    to practice and complete them.
+                </p>
+            </section>
+            <section id="tabbed-content">
+                <div id="tabs" class="gap-2">
+                    <button
+                        id="simple-explainations"
+                        class="bg-light-ui dark:bg-dark-ui text-light-cy dark:text-dark-cy p-4 font-semibold border-b-6 border-light-cy dark:border-dark-cy cursor-pointer transition duration-150 hover:bg-light-ui-2 dark:hover:bg-dark-ui-2 ease-in tab-btn"
+                        data-tab="simple"
+                        role="tab"
+                    >
+                        Simple Explanations
+                    </button>
+                    <button
+                        id="unsync-fights"
+                        class="bg-light-ui dark:bg-dark-ui text-light-tx-2 p-4 font-semibold border-b-6 border-light-ui-3 dark:border-dark-ui-3 cursor-pointer transition duration-150 hover:bg-light-ui-2 dark:hover:bg-dark-ui-2 ease-in tab-btn"
+                        data-tab="unsync"
+                        role="tab"
+                    >
+                        I want to complete them easily
+                    </button>
+                    <button
+                        id="sync-fights"
+                        class="bg-light-ui dark:bg-dark-ui text-light-tx-2 p-4 font-semibold border-b-6 border-light-ui-3 dark:border-dark-ui-3 cursor-pointer transition duration-150 hover:bg-light-ui-2 dark:hover:bg-dark-ui-2 ease-in tab-btn"
+                        data-tab="sync"
+                        role="tab"
+                    >
+                        I want to complete them like the way it intended
+                    </button>
+                    <button
+                        id="about-this-guide"
+                        class="bg-light-ui dark:bg-dark-ui text-light-tx-2 p-4 font-semibold border-b-6 border-light-ui-3 dark:border-dark-ui-3 cursor-pointer transition duration-150 hover:bg-light-ui-2 dark:hover:bg-dark-ui-2 ease-in tab-btn"
+                        data-tab="if-someone"
+                        role="tab"
+                    >
+                        About this guide
+                    </button>
+                </div>
+                <div
+                    id="simple"
+                    class="tab-panel active shadow-md px-4 py-5 bg-light-ui dark:bg-dark-ui"
+                >
+                    <h2
+                        class="text-3xl font-bold py-4 text-light-tx dark:text-dark-tx"
+                    >
+                        Simple Explanations
+                    </h2>
+                    <p class="pb-4 text-light-tx dark:text-dark-tx">
+                        Extreme difficulty trials are usually fought by eight
+                        players against a significantly more powerful version of
+                        the boss from the base difficulty trial
+                    </p>
+                    <ul class="list-disc list-outside pb-4 px-4">
+                        <li class="text-light-tx dark:text-dark-tx">
+                            They have more complex boss patterns and less room
+                            for error compared to Normal version.
+                        </li>
+                        <li class="text-light-tx dark:text-dark-tx">
+                            They all have fixed time limit in which they must be
+                            defeated or they will wipe the party with an
+                            <span class="text-light-re dark:text-dark-re"
+                                >enrage ability</span
+                            >.
+                        </li>
+                    </ul>
+                    <p class="pb-4 text-light-tx dark:text-dark-tx">
+                        <span class="font-bold"
+                            >Extreme content is purely optional and is not
+                            required to progress through the main scenario</span
+                        >. Extreme trials serve as an introduction to
+                        high-difficulty content and are usually designed to be
+                        easier than savage raids
+                    </p>
+                    <a
+                        href="#tabbed-content"
+                        class="underline cursor-pointer text-light-bl dark:text-dark-bl"
+                        >To Top</a
+                    >
+                </div>
+                <div
+                    id="unsync"
+                    class="tab-panel hidden shadow-md px-4 py-5 bg-light-ui dark:bg-dark-ui"
+                >
+                    <h2
+                        class="text-3xl font-bold py-4 text-light-tx dark:text-dark-tx"
+                    >
+                        If you prefer to finish them easily
+                    </h2>
+                    <p class="pb-4 text-light-tx dark:text-dark-tx">
+                        In FF14, the term <strong>unsync</strong> (short for
+                        <strong>Unrestricted Party</strong>) allows you to enter
+                        older dungeons, trials, and raids at your current high
+                        level, rather than being weakened to match the content's
+                        level. Unsync also buff your character's stats, let you
+                        use your gears at their full stats and abilities. You
+                        still get the same loot (like
+                        <strong>mounts</strong> and
+                        <strong>glamour gear</strong>) as you would playing
+                        normally.
+                    </p>
+                    <p class="pb-4 text-light-tx dark:text-dark-tx">
+                        To unsync the duty, you need to do these following:
+                    </p>
+                    <ul class="list-disc list-outside pb-4 px-4">
+                        <li class="mb-4 text-light-tx dark:text-dark-tx">
+                            <p class="mb-2">
+                                Open Duty Finder under the Duty section of the
+                                main menu and select the gear icon on the upper
+                                left corner to open the Duty Finder settings
+                            </p>
+                            <figure>
+                                <img
+                                    src="/duty_finder.jpg"
+                                    alt="Duty Finder settings icon"
+                                />
+                                <figcaption class="italic">
+                                    Duty Finder settings
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li class="mb-4 text-light-tx dark:text-dark-tx">
+                            <p class="flex items-center gap-3 mb-2">
+                                Enable the "Unrestricted Party" option
+                                <img
+                                    src="/Unrestricted_Party_icon.png"
+                                    class="w-6"
+                                />
+                            </p>
+                            <figure>
+                                <img
+                                    src="/undersized_party_option.jpg"
+                                    alt="Duty Finder setting options"
+                                />
+                                <figcaption class="italic">
+                                    Duty Finder setting options with Undersized
+                                    Party enabled
+                                </figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+                    <p class="pb-4 text-light-tx dark:text-dark-tx">
+                        Please note that enemies do not yield EXP and gear does
+                        not gain spiritbond when the unrestricted party function
+                        is activated.
+                    </p>
+                    <a
+                        href="#tabbed-content"
+                        class="underline cursor-pointer text-light-bl dark:text-dark-bl"
+                        >To Top</a
+                    >
+                </div>
+                <div
+                    id="sync"
+                    class="tab-panel hidden shadow-md px-3 py-5 bg-light-ui dark:bg-dark-ui"
+                >
+                    <h2
+                        class="text-3xl font-bold py-4 text-light-tx dark:text-dark-tx"
+                    >
+                        If you like doing older content synced as challenges
+                    </h2>
+                    <p class="pb-4 text-light-tx dark:text-dark-tx">
+                        In FF14, <strong>Minimum IL</strong> or item level
+                        reduces the item levels of the entire party to that of
+                        the minimum item level requirement of the duty. It is
+                        intended for players who wish to be challenged by the
+                        duties to a somewhat similar degree as when the duties
+                        were first introduced. It is often used with
+                        <strong>Silence Echo</strong>, which is a buff that is
+                        given to all players in older trials and raids to make
+                        them easier to complete if the party wipes, or
+                        automatically given at the start of the duty
+                    </p>
+                    <p class="pb-4 text-light-tx dark:text-dark-tx">
+                        To enable them, you need to do these following:
+                    </p>
+                    <ul class="list-disc list-outside pb-4 px-4">
+                        <li class="mb-4 text-light-tx dark:text-dark-tx">
+                            <p class="mb-2">
+                                Open Duty Finder under the Duty section of the
+                                main menu and select the gear icon on the upper
+                                left corner to open the Duty Finder settings
+                            </p>
+                            <figure>
+                                <img
+                                    src="/duty_finder.jpg"
+                                    alt="Duty Finder settings icon"
+                                />
+                                <figcaption class="italic">
+                                    Duty Finder settings
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li class="mb-4 text-light-tx dark:text-dark-tx">
+                            <p class="mb-2 flex items-center gap-1">
+                                Enable the <strong>Minimum IL</strong>
+                                <img src="/Minimum_IL_icon.png" class="w-6" />
+                                and <strong>Silence Echo</strong>
+                                <img src="/Silence_Echo_icon.png" class="w-6" />
+                                settings
+                            </p>
+                            <figure>
+                                <img
+                                    src="/party-settings-menu-ffxiv.jpg"
+                                    alt="Duty Finder settings options"
+                                />
+                                <figcaption class="italic">
+                                    Duty Finder settings options
+                                </figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+                    <p class="pb-4 text-light-tx dark:text-dark-tx">
+                        For Party Finder options, you should enable the
+                        <strong>Minimum IL</strong> and
+                        <strong>Silence Echo</strong> option as pointed in the
+                        circle marked as number 7 to let other players know that
+                        you want to do Minimum item level and no echo for older
+                        raids and trials as challenges
+                    </p>
+                    <img
+                        src="/pf-settings.jpg"
+                        alt="Party Finder settings"
+                        class="pb-4"
+                    />
+                    <a
+                        href="#tabbed-content"
+                        class="underline cursor-pointer text-light-bl dark:text-dark-bl"
+                        >To Top</a
+                    >
+                </div>
+                <div
+                    id="if-someone"
+                    class="tab-panel hidden shadow-md px-3 py-5 bg-light-ui dark:bg-dark-ui"
+                >
+                    <h2 class="text-3xl font-bold py-4">Simple Explanations</h2>
+                    <p class="pb-4">
+                        Extreme difficulty trials are usually fought by eight
+                        players against a significantly more powerful version of
+                        the boss from the base difficulty trial
+                    </p>
+                    <ul class="list-disc list-outside pb-4 px-4">
+                        <li>
+                            They have more complex boss patterns and less room
+                            for error compared to Normal version.
+                        </li>
+                        <li>
+                            They all have fixed time limit in which they must be
+                            defeated or they will wipe the party with an
+                            <span class="text-light-re">enrage ability</span>.
+                        </li>
+                    </ul>
+                    <p class="pb-4">
+                        <span class="font-bold"
+                            >Extreme content is purely optional and is not
+                            required to progress through the main scenario</span
+                        >. Extreme trials serve as an introduction to
+                        high-difficulty content and are usually designed to be
+                        easier than savage raids
+                    </p>
+                    <a
+                        href="#tabbed-content"
+                        class="underline cursor-pointer text-light-bl"
+                        >To Top</a
+                    >
+                </div>
+            </section>
+        </main>
+        <script type="module" src="/src/main.js"></script>
+    </body>
+</html>
