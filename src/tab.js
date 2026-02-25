@@ -10,7 +10,7 @@ tabs.forEach((tab) => {
       t.classList.remove(
         "active",
         "text-light-cy",
-        "bg-light-ui",
+        "bg-light-ui-3",
         "border-light-cy",
         "dark:text-dark-cy",
         "dark:bg-dark-ui-3",
@@ -27,7 +27,7 @@ tabs.forEach((tab) => {
     tab.classList.add(
       "active",
       "text-light-cy",
-      "bg-light-ui",
+      "bg-light-ui-3",
       "border-light-cy",
       "dark:text-dark-cy",
       "dark:bg-dark-ui-3",
